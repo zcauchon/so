@@ -8,31 +8,46 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {YellowBox, DeviceEventEmitter} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import Root from './store';
+import AppNavigator from '@navigation';
+import NavigationService from '@navigation/service';
 import Auth from '@features/auth';
-import {Button} from "@components";
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+//bluetooth and beacons
+import Permissions from 'react-native-permissions';
+import Beacons from "react-native-beacons-manager";
+YellowBox.ignoreWarnings(["Module RNIBeacon requires"]);
+YellowBox.ignoreWarnings(["Remote debugger"]);
 
-type Props = {};
-export default class App extends Component<Props> {
+const AppContainer = createAppContainer(AppNavigator);
+
+const uuid = "74278bda-b644-4520-8f0c-720eaf059935";
+const identifier = "We The Best";
+
+export default class App extends Component {
+  // componentDidMount() {
+  //   const region = {
+  //     identifier,
+  //     uuid
+  //   };
+  //   Beacons.startRangingBeaconsInRegion(region);
+  //   this.beaconsDidRange = DeviceEventEmitter.addListener(
+  //     "beaconsDidRange",
+  //     data => {console.log(data.beacons)}
+  //   )
+  // }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Auth/>
-      </View>
+      <Root>
+        <AppContainer
+          ref={navigatorRef => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }}
+        />
+      </Root>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF',
-  },
-});

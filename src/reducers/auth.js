@@ -1,4 +1,4 @@
-import {SAVE_SEARCH} from 'actions/types';
+import {SAVE_SEARCH} from '@actions/types';
 
 export default function(state=[], action) {
     switch (action.type) {
