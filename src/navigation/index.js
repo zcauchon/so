@@ -18,7 +18,7 @@ export default createStackNavigator(
     Camera: CameraPage
   },
   {
-    initialRouteName: "Auth",
+    initialRouteName: "Camera",
     headerMode: "none",
     cardStyle: {
       backgroundColor: "#111211"

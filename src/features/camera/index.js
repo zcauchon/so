@@ -1,14 +1,28 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import {Bottom} from '@components';
+import CameraComponent from './CameraComponent';
+
+//@TODO Zach
+// Camera Page
 
 class CameraPage extends Component {
     render() {
         return (
-            <View>
-                <Text style={{color: "#FFF"}}>Camera</Text>
+            <View style={styles.cameraContainer}>
+                <View style={{flex: 1}}>
+                    <CameraComponent/>
+                </View>
+                <Bottom/>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    cameraContainer: {
+        flex: 1,
+    },
+})
 
 export default CameraPage;
