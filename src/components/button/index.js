@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       height: 50,
-      width: Dimensions.get('window').width /3,
-      borderRadius: 30
+      width: Dimensions.get('window').width /1.8,
+      borderRadius: 10
   },
   text: {
       color: '#FFF',

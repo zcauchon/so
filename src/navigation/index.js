@@ -7,14 +7,18 @@ import {
 
 import Auth from '@features/auth';
 import Main from './navigators/main';
+import CameraPage from '@features/camera';
 
+//@Zach Change initialRouteName's argument of Auth to Camera to 
+// show your page
 export default createStackNavigator(
   {
     Auth,
-    Main
+    Main,
+    Camera: CameraPage
   },
   {
-    initialRouteName: "Main",
+    initialRouteName: "Auth",
     headerMode: "none",
     cardStyle: {
       backgroundColor: "#111211"
