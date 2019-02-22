@@ -10,7 +10,7 @@ import Colors from '@styles/colors';
 
 import Main from '@features/main';
 import Calendar from '@features/calendar';
-import Voice from '@features/voice';
+import Search from '@features/search';
 import { colors } from 'react-native-elements';
 import {Icon} from 'react-native-elements';
 
@@ -64,8 +64,8 @@ CalendarStack.navigationOptions = {
     tabBarIcon: ({focused}) => renderTabBarIcon("calendar", focused)
 }
 
-const VoiceAIStack = createStackNavigator({
-    Voice
+const SearchStack = createStackNavigator({
+    Search
 },
 {
     headerMode: "none",
@@ -74,15 +74,15 @@ const VoiceAIStack = createStackNavigator({
     }
 })
 
-VoiceAIStack.navigationOptions = {
+SearchStack.navigationOptions = {
     headerMode: "none",
-    tabBarLabel: 'Voice',
-    tabBarIcon: ({focused}) => renderTabBarIcon("mic", focused)
+    tabBarLabel: 'Search',
+    tabBarIcon: ({focused}) => renderTabBarIcon("magnifying-glass", focused)
 }
 
 export default createBottomTabNavigator({
     HomeStack,
-    VoiceAIStack,
+    SearchStack,
     CalendarStack,
 },
 {
@@ -91,7 +91,7 @@ export default createBottomTabNavigator({
         showLabel: false,
         inactiveTintColor: 'gray',
         style: {
-            backgroundColor: '#1F211D'
+            backgroundColor: '#161716'
         }
     },
 })
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 12
+        marginTop: 23
     },
     tabIconFocusStyle: {
         backgroundColor: "#7EB72E"

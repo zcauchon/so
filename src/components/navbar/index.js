@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         paddingTop: getStatusBarHeight()
       }
     }),
-    shadowColor: colors.textSecondary,
+    shadowColor: colors.dark,
     shadowOffset: { height: 1 },
     shadowOpacity: 0.4
   },

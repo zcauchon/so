@@ -3,6 +3,7 @@ const tintColor = '#2f95dc';
 export default {
     primary: '#4CAF50',
     secondary: '#FBC02D',
+    dark: '#161716',
     title: '#404040',
     subtitle: '#7d7d7d',
     text: '#4d4d4d',

@@ -10,7 +10,9 @@ class DetailPage extends Component {
                 <DetailPageBody 
                     screenNavigate={(route) => this.props.navigation.navigate(route)}
                 />
-                <Bottom title="Back to meetings"/>
+                <Bottom title="Back to meetings"
+                    onCancelPress={()=>this.props.navigation.goBack()}
+                />
             </View>
         )
     }

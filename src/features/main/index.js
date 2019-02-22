@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Header} from '@components';
+import MainPage from './MainPage';
 
 class Main extends Component {
 
@@ -19,12 +20,14 @@ class Main extends Component {
     }
     render() {
         return (
-            <View>
+            <View style={{flex:1}}>
                 <Header
                     centerComponent={this.renderCenterComponent()}
                 >
                 </Header>
-                <Text> Main</Text>
+                <MainPage
+                  navigateTo={(route)=>this.props.navigation.navigate(route)}
+                />
             </View>
         )
     }
