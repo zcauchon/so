@@ -13,7 +13,9 @@ class CameraPage extends Component {
                 <View style={{flex: 1}}>
                     <CameraComponent/>
                 </View>
-                <Bottom/>
+                <Bottom
+                    onCancelPress={() => this.props.navigation.goBack()}
+                />
             </View>
         )
     }
