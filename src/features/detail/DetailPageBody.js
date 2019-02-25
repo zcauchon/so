@@ -92,7 +92,7 @@ class DetailPageBody extends Component {
     }
 
     renderFiles = () => {
-        const files = ["notes_for_donut_meeting.pdf", "notes_for_finalization_of_prototype.pdf"];
+        const files = ["notes_for_donut_meeting.pdf", "notes_fosadfasdfsdfasdfr_finalization_of_prototype.pdf"];
         return (
             <View style={styles.contentBox}>
                 <Text style={styles.titleText}>Files</Text>
@@ -178,7 +178,8 @@ const styles = StyleSheet.create({
     },
     contentBox: {
         margin: 12,
-        marginLeft: 16
+        marginLeft: 16,
+        marginRight: 16
     },
     line: {
         width: dimensions.width,
