@@ -22,7 +22,7 @@ export default createStackNavigator(
     Detail: DetailPage
   },
   {
-    initialRouteName: "Main",
+    initialRouteName: "Auth",
     headerMode: "none",
     cardStyle: {
       backgroundColor: "#111211"

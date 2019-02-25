@@ -31,13 +31,14 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       height: 50,
-      width: Dimensions.get('window').width /1.8,
+      width: Dimensions.get('window').width *2/3,
       borderRadius: 10
   },
   text: {
       color: '#FFF',
       fontWeight: '600',
-      fontSize: 16
+      fontSize: 16,
+      letterSpacing: 4
   },
   confirm : {
     backgroundColor: '#7EB72E'
