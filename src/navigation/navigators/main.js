@@ -6,8 +6,8 @@ import {
 } from 'react-navigation';
 import TabBar from '@navigation/components/TabBar';
 
-import Colors from '@styles/colors';
 
+import {colorSet} from '@styles'
 import Main from '@features/main';
 import Calendar from '@features/calendar';
 import Search from '@features/search';
@@ -87,7 +87,7 @@ export default createBottomTabNavigator({
 },
 {
     tabBarOptions: {
-        activeTintColor: Colors.primary,
+        activeTintColor: colorSet.primary,
         showLabel: false,
         inactiveTintColor: 'gray',
         style: {

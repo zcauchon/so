@@ -1,7 +1,7 @@
 const tintColor = '#2f95dc';
 
-export default {
-    primary: '#4CAF50',
+export const colorSet = {
+    primary: '#7EB72E',
     secondary: '#FBC02D',
     dark: '#161716',
     title: '#404040',
