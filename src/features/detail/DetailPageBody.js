@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {View, TouchableOpacity, Text, StyleSheet, ScrollView} from 'react-native';
 import {Bottom, Header} from '@components';
 import NavigationService from '@navigation/service';
@@ -16,8 +17,8 @@ class DetailPageBody extends Component {
     }
     
     renderRightComponent = () => {
-        const attendees = 2;
-        const totalInvited = 8;
+        const totalInvited = this.props.invited.length;
+        const attendees = this.props.attendees.length;
         return (
             <View 
                 style={{flexDirection: "row", alignItems: 'center', marginRight: 8}}
@@ -47,8 +48,8 @@ class DetailPageBody extends Component {
     }
 
     renderTitle = () => {
-        const meetingName = "Design Meeting To Finalize Prototype";
-        const roomName = "Room 3B Chestnut";
+        const {meetingName} = this.props;
+        const {roomName} = this.props.roomInfo;
         return (
             <View style={styles.titleBox}>
                 <Text style={styles.titleText}>
@@ -62,12 +63,7 @@ class DetailPageBody extends Component {
     }
 
     renderAgenda = () => {
-        const agendaPoints = [
-            "Go over wireframes and user flow",
-            "Discuss needed components",
-            "Have Pizza",
-            "Discuss next steps"
-        ];
+        const {agendaPoints} = this.props;
         return (
             <View style={styles.contentBox}>
                 <Text style={styles.titleText}>Agenda</Text>
@@ -92,7 +88,7 @@ class DetailPageBody extends Component {
     }
 
     renderFiles = () => {
-        const files = ["notes_for_donut_meeting.pdf", "notes_fosadfasdfsdfasdfr_finalization_of_prototype.pdf"];
+        const {files} = this.props;
         return (
             <View style={styles.contentBox}>
                 <Text style={styles.titleText}>Files</Text>
@@ -127,7 +123,7 @@ class DetailPageBody extends Component {
                                     size={15}
                                    />
                                 </View> 
-                                <Text style={styles.filenameText}>{value}</Text>
+                                <Text style={styles.filenameText}>{value.fileName}</Text>
                             </View>
                         </TouchableOpacity>
                     )
@@ -139,10 +135,10 @@ class DetailPageBody extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Header
+                    rightComponent={this.renderRightComponent()}
+                />
                 <ScrollView style={{flex:1}}>
-                    <Header
-                        rightComponent={this.renderRightComponent()}
-                    />
                     {this.renderDetailContent()}
                 </ScrollView>
                 <Bottom banner={false}
@@ -193,4 +189,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default DetailPageBody;
+const mapStateToProps = (state) => {
+    return state.detail;
+}
+export default connect(mapStateToProps, {})(DetailPageBody);
