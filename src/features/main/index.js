@@ -4,33 +4,32 @@ import {Header} from '@components';
 import MainPage from './MainPage';
 
 class Main extends Component {
-
-    renderCenterComponent = () => {
-        return (
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text style={styles.whiteText}>
-              SMART 
-            </Text>
-            <View style={styles.greenBall}/>
-            <Text style={styles.whiteText}>
-              FFICE
-            </Text>
-          </View>
-        )
-    }
-    render() {
-        return (
-            <View style={{flex:1}}>
-                <Header
-                    centerComponent={this.renderCenterComponent()}
-                >
-                </Header>
-                <MainPage
-                  navigateTo={(route)=>this.props.navigation.navigate(route)}
-                />
-            </View>
-        )
-    }
+  renderCenterComponent = () => {
+    return (
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <Text style={styles.whiteText}>
+          SMART 
+        </Text>
+        <View style={styles.greenBall}/>
+        <Text style={styles.whiteText}>
+          FFICE
+        </Text>
+      </View>
+    )
+  }
+  render() {
+    return (
+      <View style={{flex:1}}>
+          <Header
+              centerComponent={this.renderCenterComponent()}
+          >
+          </Header>
+          <MainPage
+            navigateTo={(route)=>this.props.navigation.navigate(route)}
+          />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({

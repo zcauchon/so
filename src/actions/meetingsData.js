@@ -4,7 +4,7 @@ export const meetingsData = [
         meetingId: "1239ss",
         meetingName: "Design Meeting To Finzalize Prototype",
         meetingTime: {
-            date: "2/28/2019",
+            date: "3/1/2019",
             startTime: "11:30 AM",
             endTime: "12:30 PM"
         },
@@ -58,7 +58,7 @@ export const meetingsData = [
         meetingId: "11239s",
         meetingName: "AWS Set Up",
         meetingTime: {
-            date: "2/28/2019",
+            date: "3/1/2019",
             startTime: "11:30 AM",
             endTime: "12:30 PM"
         },
