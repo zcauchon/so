@@ -1,0 +1,2 @@
+export const SAVE_SEARCH = "SAVESEARCH";
+export const FILL_MEETING_DETAIL = "FILL_MEETING_DETAIL";
