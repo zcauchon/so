@@ -4,7 +4,6 @@ import {Header} from '@components';
 import MainPage from './MainPage';
 
 class Main extends Component {
-
     renderCenterComponent = () => {
         return (
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -19,17 +18,17 @@ class Main extends Component {
         )
     }
     render() {
-        return (
-            <View style={{flex:1}}>
-                <Header
-                    centerComponent={this.renderCenterComponent()}
-                >
-                </Header>
-                <MainPage
-                  navigateTo={(route)=>this.props.navigation.navigate(route)}
-                />
-            </View>
-        )
+      return (
+        <View style={{flex: 1}}>
+          <Header
+              centerComponent={this.renderCenterComponent()}
+          >
+          </Header>
+          <MainPage
+            navigateTo={(route)=>this.props.navigation.navigate(route)}
+          />
+        </View>
+      )
     }
 }
 

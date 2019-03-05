@@ -24,7 +24,7 @@ class DetailPageBody extends Component {
                 style={{flexDirection: "row", alignItems: 'center', marginRight: 8}}
             >
                 <Text style={{color:"#FFF"}}>{attendees}/{totalInvited}  </Text>
-                <Text style={{color:"#FFF"}}>attendee{(attendees > 1) ? "s" : ""}  </Text>
+                <Text style={{color:"#FFF"}}>attendee{(attendees > 1) ? "s" : ""}</Text>
                 <Icon
                     name="child"
                     type="font-awesome"
