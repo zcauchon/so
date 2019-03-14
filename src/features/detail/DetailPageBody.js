@@ -97,7 +97,7 @@ class DetailPageBody extends Component {
                         <TouchableOpacity
                             key={index}
                             style={{
-                                marginVertical: 4,
+                                marginVertical: 5,
                             }}
                         >
                             <View style={{

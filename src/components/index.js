@@ -11,5 +11,5 @@ export {
   Input,
   Header,
   Bottom,
-  BottomTab
+  BottomTab,
 }

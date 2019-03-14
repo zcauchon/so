@@ -60,6 +60,24 @@ class MainPage extends Component {
             )
         }
     }
+
+    renderCard = ({item}) => {
+        if(item.meetingTime.date === date2){
+            return(
+                <TouchableOpacity
+                    onPress={()=>this.navigateTo(DETAIL)} 
+                >
+                    <Card
+                        name={item.meetingName}
+                        meetingTime={item.meetingTime.startTime}
+                        hashtag='#UCMS'
+                        // This is where the beacon will be checked!
+                        checkin
+                    />
+                </TouchableOpacity>
+            )
+        }
+    }
     
     render() {
         return (
@@ -68,7 +86,7 @@ class MainPage extends Component {
                     <Text style={styles.yourlocation}>You're in Deloitte 200</Text>
                 </View>
                 <View style={{paddingLeft:15, paddingRight:15}}>
-                    <View style={{flexDirection: 'row', width:'100%', justifyContent:'space-between', alignItems:'center'}}>
+                    <View style={{flexDirection: 'row', justifyContent:'space-between', alignItems:'center'}}>
                         <Text style={styles.yourmeeting}>Your meetings</Text>
                         <TouchableOpacity
                             onPress={()=>this.navigateTo(CREATEMEETING)}
@@ -89,17 +107,7 @@ class MainPage extends Component {
                     data={this.state.data}
                     keyExtractor = {item => item.meetingId}
                     contentContainerStyle={styles.listView}
-                    renderItem={this.renderCardToday}
-                    // numColumns={numColumns}
-                />
-                <View style={{paddingLeft:15}}>
-                    <Text style={styles.todays}>Tomorrow, {tomorrow}</Text>
-                </View>
-                <FlatList
-                    data={this.state.data}
-                    keyExtractor = {item => item.meetingId}
-                    contentContainerStyle={styles.listView}
-                    renderItem={this.renderCardFuture}
+                    renderItem={this.renderCard}
                     // numColumns={numColumns}
                 />
             </View>

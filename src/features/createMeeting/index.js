@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {Bottom} from '@components';
 import { Header } from '../../components';
 import CreatePage from './CreatePage';
 
@@ -26,6 +27,9 @@ class CreateMeeting extends Component {
         </Header>
         <CreatePage
           navigateTo={(route)=>this.props.navigation.navigate(route)}
+        />
+        <Bottom title="Back to meetings"
+          onCancelPress={()=>this.props.navigation.goBack()}
         />
       </View>
     )

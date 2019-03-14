@@ -30,15 +30,15 @@ class Auth extends Component {
             </Text>
           </View>
         </View>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-        <TextInput/>
-        </View>
-        <View style={{flex: 1, justifyContent: 'center'}}>
+        <View style={{flex: 1.4, justifyContent: 'flex-end', paddingBottom: 30}}>
           <Input 
-            label="Password"
+            title="Email"
+          />
+          <Input 
+            title="Password"
           />
         </View>
-        <View style={{flex: 1, justifyContent: 'flex-start'}}>
+        <View style={{flex: 1.4, justifyContent: 'flex-start'}}>
           <Button 
             confirm 
             onButtonPress={this.onLoginPress}

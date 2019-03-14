@@ -8,8 +8,8 @@ import {
 import Auth from '@features/auth';
 import Main from './navigators/main';
 import CameraPage from '@features/camera';
-import DetailPage from '@features/detail';
 import CreateMeeting from '@features/createMeeting';
+import DetailPage from '@features/detail';
 import Voice from '@features/voice';
 
 //@Zach Change initialRouteName's argument of Auth to Camera to 
@@ -19,12 +19,12 @@ export default createStackNavigator(
     Auth,
     Main,
     Voice,
-    CreateMeeting,
     Camera: CameraPage,
-    Detail: DetailPage,
+    CreateMeeting: CreateMeeting,
+    Detail: DetailPage
   },
   {
-    initialRouteName: "Main",
+    initialRouteName: "Auth",
     headerMode: "none",
     cardStyle: {
       backgroundColor: "#111211"
