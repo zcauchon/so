@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   outerContainer: {
     zIndex: 10,
     paddingHorizontal: 16,
-    height: Platform.OS === "ios" ? 80 : 80 - getStatusBarHeight,
+    height: Platform.OS === "ios" ? 80 : 80 - getStatusBarHeight(),
     ...Platform.select({
       ios: {
         paddingTop: getStatusBarHeight()
